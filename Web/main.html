@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Webpage</title>
+	<script type="text/javascript">
+        window.onload = function() {
+            function printError(elemId, hintMsg) {
+                document.getElementById(elemId).innerHTML = hintMsg;
+        };
+    }
+		function submitAction() {
+			// var outputElement = document.getElementById("print_out_area");
+			var password = document.getElementById('pass').value;
+			var email = document.getElementById('email').value;
+            var regex = /^\S+@\S+\.\S+$/;
+            if(regex.test(email) === false){
+                printError(email, "Please enter a valid email")
+            }
+	        // outputElement.innerHTML = "Password : "+ password + "<br>" + "Email : "+ email + "<br>" ;  
+	}
+	</script>
+</head>
+<body>
+	<fieldset>
+			<font style="font-size: 23px;">
+        	<legend><u>Login Form</legend></u>
+        	<br>
+            <label for="email">Email : </label><br>
+            <input type="email" id="email" name="email" placeholder="xyz@mail.com"><br>
+            <br>
+            <label for="password">Password : </label><br>
+            <input type="text" id="pass" name="pass" placeholder="1a2b33#"><br>
+            <br>
+			<button onclick="submitAction()">Login</button>
+			<br>
+			</font>
+			<!-- <div>
+		    	<p style="font-size: 23px;">Display inputs here :</p>
+		    	<p id="print_out_area" style="font-size: 23px; color: blue; font-weight: bold;"></p>
+		    </div> -->
+
+</body>
+</html>
